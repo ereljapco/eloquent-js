@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --ft-primary: 'Poppins', sans-serif;
+  --clr-base: #191724;
+  --clr-surface: #1f1d2e;
+  --clr-overlay: #26233a;
+  --clr-muted: #6e6a86;
+  --clr-subtle: #908caa;
+  --clr-text: #e0def4;
+  --clr-love: #eb6f92;
+  --clr-gold: #f6c177;
+  --clr-rose: #ebbcba;
+  --clr-pine: #31748f;
+  --clr-foam: #9ccfd8;
+  --clr-iris: #c4a7e7;
+  --clr-hl-low: #21202e;
+  --clr-hl-med: #403d52;
+  --clr-hl-high: #524f67;
+}
+
+body {
+  color: var(--clr-text);
+  font-family: var(--ft-primary);
+  background-color: var(--clr-base);
+}
+
+li {
+  list-style-type: none;
+}
+
+.nav,
+.header {
+  width: 90%;
+  max-width: 1150px;
+  margin-inline: auto;
+}
+
+.nav {
+  margin-block: 3rem;
+}
+
+.nav__link::before {
+  content: '←';
+  padding-right: 0.5rem;
+}
+
+.nav__link {
+  color: var(--clr-text);
+  text-decoration: none;
+  background-color: var(--clr-hl-med);
+  border-radius: 100vh;
+  padding: 0.5rem 1rem;
+}
+
+.nav__link:hover {
+  background-color: var(--clr-hl-high);
+}
+
+.header {
+  margin-block: 3rem 3rem;
+}
+
+.title--main {
+  text-align: center;
+}
+
+.title--chapter {
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.title--exercise {
+  color: var(--clr-iris);
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.main {
+  margin-block: 3rem;
+  width: 90%;
+  max-width: 1150px;
+  margin-inline: auto;
+}
+
+.chapter__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.chapter__item {
+  font-size: 1.1rem;
+  background-color: var(--clr-surface);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.exercise__item::before {
+  content: '▹';
+  color: var(--clr-iris);
+}
+
+.exercise__item {
+  color: var(--clr-text);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.exercise__link {
+  color: var(--clr-subtle);
+  text-decoration: none;
+}
+
+.exercise__link:hover {
+  color: var(--clr-text);
+}
+
+.note--warning::before {
+  content: 'ⓘ';
+  font-size: 1.25rem;
+  padding-right: 0.5rem;
+}
+
+.note--warning {
+  color: var(--clr-gold);
+  font-weight: 300;
+  background-color: hsla(35, 88%, 72%, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
