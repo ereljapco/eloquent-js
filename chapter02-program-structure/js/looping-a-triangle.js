@@ -1,8 +1,5 @@
 const CALLS = 7;
-let hash = '';
 
-for (let i = 0; i < CALLS; i++) {
-  hash += '#';
-
+for (let hash = '#'; hash.length <= CALLS; hash += '#') {
   console.log(hash);
 }
