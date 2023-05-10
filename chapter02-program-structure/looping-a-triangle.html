@@ -12,13 +12,30 @@
       <a class="nav__link" href="../index.html">Back</a>
     </nav>
     <header class="header">
-      <h1 class="title--chapter">Chapter 02: Program Structure</h1>
-      <h2 class="title--exercise">Looping a Triangle</h2>
+      <p class="title--chapter">Chapter 02: Program Structure</p>
+      <h1 class="title--exercise">Looping a Triangle</h1>
     </header>
     <main class="main">
-      <p class="note--warning">
-        Please open your web console to see the output for this exercise.
+      <p class="note note--info">
+        Please open your web console to see the original output for this
+        exercise.
       </p>
+      <div class="c-section" id="sectionContainer">
+        <section class="section c-form">
+          <h2 class="section__title">Number of Rows</h2>
+          <form class="form form--triangle" id="triangleForm">
+            <input
+              class="form__input form__input--triangle"
+              id="rowCount"
+              type="number"
+              min="1"
+              max="7"
+              placeholder="#"
+            />
+            <button class="form__submit-btn" type="submit">Submit</button>
+          </form>
+        </section>
+      </div>
     </main>
 
     <script src="./js/looping-a-triangle.js"></script>
