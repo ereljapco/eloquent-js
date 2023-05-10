@@ -1,3 +1,13 @@
+// Original solution
+
+const NUM_OF_CALLS = 7;
+
+for (let hash = '#'; hash.length <= NUM_OF_CALLS; hash += '#') {
+  console.log(hash);
+}
+
+// Dynamic visualization
+
 let sectionContainer = document.querySelector('#sectionContainer');
 let triangleForm = document.querySelector('#triangleForm');
 
@@ -41,11 +51,3 @@ triangleForm.addEventListener('submit', (e) => {
     triangleSection.appendChild(row);
   }
 });
-
-// Original solution
-
-const NUM_OF_CALLS = 7;
-
-for (let hash = '#'; hash.length <= NUM_OF_CALLS; hash += '#') {
-  console.log(hash);
-}
