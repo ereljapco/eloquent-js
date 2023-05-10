@@ -1,8 +1,18 @@
-function range(start, end) {
+function range(start, end, step) {
   let arr = [];
 
-  for (let i = start; i <= end; i++) {
-    arr.push(i);
+  if (!step) {
+    step = 1;
+  }
+
+  if (start < end) {
+    for (let i = start; i <= end; i += step) {
+      arr.push(i);
+    }
+  } else {
+    for (let i = start; i >= end; i += step) {
+      arr.push(i);
+    }
   }
 
   return arr;
@@ -18,4 +28,6 @@ function sum(arr) {
   return sum;
 }
 
-console.log(sum(range(1, 10)));
+console.log(`Output for sum(range(1, 10)): ${sum(range(1, 10))}`);
+console.log(`Output for sum(range(1, 10, 2)): ${sum(range(1, 10, 2))}`);
+console.log(`Output for sum(range(5, 2, -1)): ${sum(range(5, 2, -1))}`);
