@@ -142,6 +142,12 @@ button {
   background-color: hsla(35, 88%, 72%, 0.1);
 }
 
+.note--warning::before {
+  content: '⚠';
+  font-size: 0.75rem;
+  padding-right: 0.5rem;
+}
+
 .note--info {
   color: var(--clr-foam);
   background-color: hsla(189, 43%, 73%, 0.1);
