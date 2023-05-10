@@ -225,7 +225,8 @@ button {
   margin-bottom: 1rem;
 }
 
-.hash {
+.hash,
+.fizzbuzz-num {
   color: var(--clr-foam);
   font-size: 0.9rem;
   border: 1px solid var(--clr-hl-high);
@@ -233,4 +234,29 @@ button {
   border-radius: 0.25rem;
   padding: 0.25rem 0.5rem;
   margin-right: 0.5rem;
+}
+
+.section--fizzbuzz {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  gap: 1rem;
+}
+
+.fizzbuzz-num {
+  display: flex;
+  aspect-ratio: 1 / 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.fizzbuzz-num--fizzbuzz {
+  color: var(--clr-gold);
+}
+
+.fizzbuzz-num--fizz {
+  color: var(--clr-rose);
+}
+
+.fizzbuzz-num--buzz {
+  color: var(--clr-iris);
 }
