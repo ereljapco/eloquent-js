@@ -12,33 +12,29 @@ function arrayToList(arr) {
   let list = null;
 
   for (let i = arr.length - 1; i >= 0; i--) {
-    if (!list) {
-      list = {
-        value: arr[i],
-        rest: null,
-      };
-    }
-
-    list = {
-      value: arr[i],
-      rest: list,
-    };
+    list = prepend(arr[i], list);
   }
 
   return list;
 }
 
 function listToArray(list, arr) {
-  if (!list.rest) {
-    return;
-  }
-
   if (!arr) {
     arr = [];
   }
 
   arr.push(list.value);
-  listToArray(list.rest, arr);
+
+  if (list.rest) {
+    listToArray(list.rest, arr);
+  }
 
   return arr;
+}
+
+function prepend(element, list) {
+  return {
+    value: element,
+    rest: list,
+  };
 }
