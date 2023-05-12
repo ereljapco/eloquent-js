@@ -7,38 +7,41 @@ These are my solutions to the exercises found on [Marijn Haverbeke's Eloquent JS
 ## Table of Contents
 
 - [Eloquent JS](#eloquent-js)
-	- [Table of Contents](#table-of-contents)
-	- [Overview](#overview)
-		- [Links](#links)
-	- [Chapter 01 - Values, Types, and Operators](#chapter-01---values-types-and-operators)
-	- [Chapter 02 - Program Structure](#chapter-02---program-structure)
-		- [👉🏻 Looping a Triangle](#-looping-a-triangle)
-			- [🔗 Links](#-links)
-			- [🤔 Problem Description](#-problem-description)
-			- [Hints](#hints)
-		- [👉🏻 FizzBuzz](#-fizzbuzz)
-			- [🔗 Links](#-links-1)
-			- [🤔 Problem Description](#-problem-description-1)
-		- [👉🏻 Chessboard](#-chessboard)
-			- [🔗 Links](#-links-2)
-			- [🤔 Problem Description](#-problem-description-2)
-	- [Chapter 03 - Functions](#chapter-03---functions)
-		- [👉🏻 Minimum](#-minimum)
-			- [🔗 Links](#-links-3)
-			- [🤔 Problem Description](#-problem-description-3)
-		- [👉🏻 Recursion](#-recursion)
-			- [🔗 Links](#-links-4)
-			- [🤔 Problem Description](#-problem-description-4)
-		- [👉🏻 Bean Counting](#-bean-counting)
-			- [🔗 Links](#-links-5)
-			- [🤔 Problem Description](#-problem-description-5)
-	- [Chapter 04 - Data Structures: Objects and Arrays](#chapter-04---data-structures-objects-and-arrays)
-		- [👉🏻 The Sum of a Range](#-the-sum-of-a-range)
-			- [🔗 Links](#-links-6)
-			- [🤔 Problem Description](#-problem-description-6)
-		- [👉🏻 Reversing an Array](#-reversing-an-array)
-			- [🔗 Links](#-links-7)
-			- [🤔 Problem Description](#-problem-description-7)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Links](#links)
+  - [Chapter 01 - Values, Types, and Operators](#chapter-01---values-types-and-operators)
+  - [Chapter 02 - Program Structure](#chapter-02---program-structure)
+    - [👉🏻 Looping a Triangle](#-looping-a-triangle)
+      - [🔗 Links](#-links)
+      - [🤔 Problem Description](#-problem-description)
+      - [Hints](#hints)
+    - [👉🏻 FizzBuzz](#-fizzbuzz)
+      - [🔗 Links](#-links-1)
+      - [🤔 Problem Description](#-problem-description-1)
+    - [👉🏻 Chessboard](#-chessboard)
+      - [🔗 Links](#-links-2)
+      - [🤔 Problem Description](#-problem-description-2)
+  - [Chapter 03 - Functions](#chapter-03---functions)
+    - [👉🏻 Minimum](#-minimum)
+      - [🔗 Links](#-links-3)
+      - [🤔 Problem Description](#-problem-description-3)
+    - [👉🏻 Recursion](#-recursion)
+      - [🔗 Links](#-links-4)
+      - [🤔 Problem Description](#-problem-description-4)
+    - [👉🏻 Bean Counting](#-bean-counting)
+      - [🔗 Links](#-links-5)
+      - [🤔 Problem Description](#-problem-description-5)
+  - [Chapter 04 - Data Structures: Objects and Arrays](#chapter-04---data-structures-objects-and-arrays)
+    - [👉🏻 The Sum of a Range](#-the-sum-of-a-range)
+      - [🔗 Links](#-links-6)
+      - [🤔 Problem Description](#-problem-description-6)
+    - [👉🏻 Reversing an Array](#-reversing-an-array)
+      - [🔗 Links](#-links-7)
+      - [🤔 Problem Description](#-problem-description-7)
+    - [👉🏻 A List](#-a-list)
+      - [🔗 Links](#-links-8)
+      - [🤔 Problem Description](#-problem-description-8)
 
 ## Overview
 
@@ -207,3 +210,37 @@ As a bonus assignment, modify your range function to take an optional third argu
 Arrays have a `reverse` method that changes the array by inverting the order in which its elements appear. For this exercise, write two functions, `reverseArray` and `reverseArrayInPlace`. The first, `reverseArray`, takes an array as argument and produces a new array that has the same elements in the inverse order. The second, `reverseArrayInPlace`, does what the reverse method does: it \*_modifies_ the array given as argument by reversing its elements. Neither may use the standard `reverse` method.
 
 Thinking back to the notes about side effects and pure functions in the previous chapter, which variant do you expect to be useful in more situations? Which one runs faster?
+
+### 👉🏻 A List
+
+#### 🔗 Links
+
+- [Solution URL](https://github.com/ereljapco/eloquent-js/blob/main/chapter04-data-structures/js/a-list.js)
+- [Live Site Page URL](https://eloquent-js-erj.netlify.app/chapter04-data-structures/a-list.html)
+
+#### 🤔 Problem Description
+
+Objects, as generic blobs of values, can be used to build all sorts of data structures. A common data structure is the _list_ (not to be confused with array). A list is a nested set of objects, with the first object holding a reference to the second, the second to the third, and so on.
+
+```js
+let list = {
+  value: 1,
+  rest: {
+    value: 2,
+    rest: {
+      value: 3,
+      rest: null,
+    },
+  },
+};
+```
+
+The resulting objects form a chain, like this:
+
+![](https://eloquentjavascript.net/img/linked-list.svg)
+
+A nice thing about lists is that they can share parts of their structure. For example, if I create two new values `{value: 0, rest: list}` and `{value: -1, rest: list}` (with list referring to the binding defined earlier), they are both independent lists, but they share the structure that makes up their last three elements. The original list is also still a valid three-element list.
+
+Write a function `arrayToList` that builds up a list structure like the one shown when given `[1, 2, 3]` as argument. Also write a `listToArray` function that produces an array from a list. Then add a helper function `prepend`, which takes an element and a list and creates a new list that adds the element to the front of the input list, and `nth`, which takes a list and a number and returns the element at the given position in the list (with zero referring to the first element) or `undefined` when there is no such element.
+
+If you haven’t already, also write a recursive version of nth.
