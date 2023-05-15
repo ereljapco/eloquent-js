@@ -177,7 +177,8 @@ button {
   margin-bottom: 1.5rem;
 }
 
-.form--triangle {
+.form--triangle,
+.form--grid {
   display: inline-block;
   color: var(--clr-text);
   background-color: var(--clr-overlay);
@@ -190,7 +191,8 @@ button {
   border-color: var(--clr-love);
 }
 
-.form__input--triangle {
+.form__input--triangle,
+.form__input--grid {
   width: 2rem;
   color: inherit;
   background-color: transparent;
@@ -198,12 +200,15 @@ button {
   -moz-appearance: textfield;
 }
 
-.form__input--triangle:focus {
+.form__input--triangle:focus,
+.form__input--grid:focus {
   outline: none;
 }
 
 .form__input--triangle::-webkit-inner-spin-button,
-.form__input--triangle::-webkit-outer-spin-button {
+.form__input--triangle::-webkit-outer-spin-button,
+.form__input--grid::-webkit-inner-spin-button,
+.form__input--grid::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -226,7 +231,8 @@ button {
 }
 
 .hash,
-.fizzbuzz-num {
+.fizzbuzz-num,
+.grid-unit {
   color: var(--clr-foam);
   font-size: 0.9rem;
   border: 1px solid var(--clr-hl-high);
@@ -259,4 +265,17 @@ button {
 
 .fizzbuzz-num--buzz {
   color: var(--clr-iris);
+}
+
+.grid__row {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.grid-unit {
+  display: flex;
+  width: 2rem;
+  aspect-ratio: 1 / 1;
+  align-items: center;
+  justify-items: center;
 }
