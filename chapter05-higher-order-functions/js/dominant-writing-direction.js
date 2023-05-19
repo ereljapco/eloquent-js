@@ -6,27 +6,16 @@ console.log(dominantDirection('Hey, مساء الخير'));
 // Generated from the Unicode 10 database and https://en.wikipedia.org/wiki/Script_(Unicode)
 
 function dominantDirection(text) {
-  let ltrCount = 0;
-  let rtlCount = 0;
-
   let directions = countBy(text, (char) => {
     let script = characterScript(char.codePointAt(0));
     return script ? script.direction : 'none';
   }).filter(({ name }) => name != 'none');
 
-  for (let direction of directions) {
-    if (direction.name === 'ltr') {
-      ltrCount = direction.count;
-    } else {
-      rtlCount = direction.count;
-    }
-  }
+  let dominantDirection = directions.reduce((previous, current) => {
+    return previous.count > current.count ? previous.name : current.name;
+  }, {});
 
-  if (ltrCount > rtlCount) {
-    return 'ltr';
-  }
-
-  return 'rtl';
+  return dominantDirection;
 }
 
 function characterScript(code) {
