@@ -42,6 +42,24 @@ These are my solutions to the exercises found on [Marijn Haverbeke's Eloquent JS
     - [👉🏻 A List](#-a-list)
       - [🔗 Links](#-links-8)
       - [🤔 Problem Description](#-problem-description-8)
+  - [Chapter 05 - Higher-Order Functions](#chapter-05---higher-order-functions)
+    - [👉🏻 Flattening](#-flattening)
+      - [🔗 Links](#-links-9)
+      - [🤔 Problem Description](#-problem-description-9)
+    - [👉🏻 Your Own Loop](#-your-own-loop)
+      - [🔗 Links](#-links-10)
+      - [🤔 Problem Description](#-problem-description-10)
+    - [👉🏻 Everything](#-everything)
+      - [🔗 Links](#-links-11)
+      - [🤔 Problem Description](#-problem-description-11)
+    - [👉🏻 Dominant Writing Direction](#-dominant-writing-direction)
+      - [🔗 Links](#-links-12)
+      - [🤔 Problem Description](#-problem-description-12)
+  - [Chapter 06 - Secret Life of Objects](#chapter-06---secret-life-of-objects)
+    - [👉🏻 A Vector Type](#-a-vector-type)
+      - [🔗 Links](#-links-13)
+      - [🤔 Problem Description](#-problem-description-13)
+      - [💡 What I learned](#-what-i-learned)
 
 ## Overview
 
@@ -244,3 +262,77 @@ A nice thing about lists is that they can share parts of their structure. For ex
 Write a function `arrayToList` that builds up a list structure like the one shown when given `[1, 2, 3]` as argument. Also write a `listToArray` function that produces an array from a list. Then add a helper function `prepend`, which takes an element and a list and creates a new list that adds the element to the front of the input list, and `nth`, which takes a list and a number and returns the element at the given position in the list (with zero referring to the first element) or `undefined` when there is no such element.
 
 If you haven’t already, also write a recursive version of nth.
+
+## Chapter 05 - Higher-Order Functions
+
+### 👉🏻 Flattening
+
+#### 🔗 Links
+
+- [Solution URL](https://github.com/ereljapco/eloquent-js/blob/main/chapter05-higher-order-functions/js/flattening.js)
+- [Live Site Page URL](https://eloquent-js-erj.netlify.app/chapter05-higher-order-functions/flattening.html)
+
+#### 🤔 Problem Description
+
+Use the `reduce` method in combination with the `concat` method to “flatten” an array of arrays into a single array that has all the elements of the original arrays.
+
+### 👉🏻 Your Own Loop
+
+#### 🔗 Links
+
+- [Solution URL](https://github.com/ereljapco/eloquent-js/blob/main/chapter05-higher-order-functions/js/your-own-loop.js)
+- [Live Site Page URL](https://eloquent-js-erj.netlify.app/chapter05-higher-order-functions/your-own-loop.html)
+
+#### 🤔 Problem Description
+
+Write a higher-order function `loop` that provides something like a `for` loop statement. It takes a value, a test function, an update function, and a body function. Each iteration, it first runs the test function on the current loop value and stops if that returns `false`. Then it calls the body function, giving it the current value. Finally, it calls the update function to create a new value and starts from the beginning.
+
+When defining the function, you can use a regular loop to do the actual looping.
+
+### 👉🏻 Everything
+
+#### 🔗 Links
+
+- [Solution URL](https://github.com/ereljapco/eloquent-js/blob/main/chapter05-higher-order-functions/js/everything.js)
+- [Live Site Page URL](https://eloquent-js-erj.netlify.app/chapter05-higher-order-functions/everything.html)
+
+#### 🤔 Problem Description
+
+Analogous to the `some` method, arrays also have an `every` method. This one returns true when the given function returns true for _every_ element in the array. In a way, `some` is a version of the || operator that acts on arrays, and `every` is like the && operator.
+
+Implement `every` as a function that takes an array and a predicate function as parameters. Write two versions, one using a loop and one using the `some` method.
+
+### 👉🏻 Dominant Writing Direction
+
+#### 🔗 Links
+
+- [Solution URL](https://github.com/ereljapco/eloquent-js/blob/main/chapter05-higher-order-functions/js/dominant-writing-direction.js)
+- [Live Site Page URL](https://eloquent-js-erj.netlify.app/chapter05-higher-order-functions/dominant-writing-direction.html)
+
+#### 🤔 Problem Description
+
+Write a function that computes the dominant writing direction in a string of text. Remember that each script object has a direction property that can be "ltr" (left to right), "rtl" (right to left), or "ttb" (top to bottom).
+
+The dominant direction is the direction of a majority of the characters that have a script associated with them. The `characterScript` and `countBy` functions defined earlier in the chapter are probably useful here.
+
+## Chapter 06 - Secret Life of Objects
+
+### 👉🏻 A Vector Type
+
+#### 🔗 Links
+
+- [Solution URL](https://github.com/ereljapco/eloquent-js/blob/main/chapter06-the-secret-life-of-objects/js/a-vector-type.js)
+- [Live Site Page URL](https://eloquent-js-erj.netlify.app/chapter06-the-secret-life-of-objects/a-vector-type.html)
+
+#### 🤔 Problem Description
+
+Write a class `Vec` that represents a vector in two-dimensional space. It takes `x` and `y` parameters (numbers), which it should save to properties of the same name.
+
+Give the `Vec` prototype two methods, `plus` and `minus`, that take another vector as a parameter and return a new vector that has the sum or difference of the two vectors’ (`this` and the parameter) _x_ and _y_ values.
+
+Add a getter property length to the prototype that computes the length of the vector—that is, the distance of the point _(x, y)_ from the origin _(0, 0)_.
+
+#### 💡 What I learned
+
+- ES6+ `**` operator
+  - Use the `**` operator to square `x` and `y` values for the `length` getter property. `Math.pow()` produces the same value, but the `**` is more appropriate for this one and it is a lot more cleaner to read
